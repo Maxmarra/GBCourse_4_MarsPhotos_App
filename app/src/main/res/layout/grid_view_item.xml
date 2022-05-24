@@ -5,13 +5,13 @@
 
     <data>
         <variable
-            name="viewModel"
-            type="com.example.android.marsphotos.overview.OverviewViewModel" />
+            name="photo"
+            type="com.example.android.marsphotos.network.MarsPhoto" />
     </data>
 
     <ImageView
 
-        app:imageUrl="@{viewModel.photos.imgSrcUrl}"
+        app:imageUrl="@{photo.imgSrcUrl}"
 
         android:id="@+id/mars_image"
         android:layout_width="wrap_content"
