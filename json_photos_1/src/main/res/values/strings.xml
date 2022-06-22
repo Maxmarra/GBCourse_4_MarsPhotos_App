@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">json_photos_1</string>
+    <string name="photo_id">%d</string>
+</resources>

@@ -23,10 +23,7 @@ class PhotoGridAdapter : ListAdapter<MarsPhoto,
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):
             MarsPhotoViewHolder {
-        return MarsPhotoViewHolder(
-            GridViewItemBinding.inflate(
-                LayoutInflater.from(parent.context)
-            )
+        return MarsPhotoViewHolder(GridViewItemBinding.inflate(LayoutInflater.from(parent.context))
         )
     }
 
