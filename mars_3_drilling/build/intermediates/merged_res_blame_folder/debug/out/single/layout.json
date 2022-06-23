@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\7.3.3\\com.example.mars_3_drilling-mergeDebugResources-34:\\layout\\fragment_mars.xml",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\7.3.3\\com.example.mars_3_drilling-main-37:\\layout\\fragment_mars.xml"
+    },
+    {
+        "merged": "C:\\Users\\Maxim\\.gradle\\daemon\\7.3.3\\com.example.mars_3_drilling-mergeDebugResources-34:\\layout\\item_layout.xml",
+        "source": "C:\\Users\\Maxim\\.gradle\\daemon\\7.3.3\\com.example.mars_3_drilling-main-37:\\layout\\item_layout.xml"
+    },
+    {
+        "merged": "com.example.mars_3_drilling-mergeDebugResources-34:/layout/item_layout.xml",
+        "source": "com.example.mars_3_drilling-main-37:/layout/item_layout.xml"
+    }
+]
