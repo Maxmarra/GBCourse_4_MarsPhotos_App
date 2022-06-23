@@ -9,14 +9,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.android.marsphotos.databinding.GridViewItemBinding
 import com.example.android.marsphotos.network.MarsPhoto
 
-class PhotoGridAdapter : ListAdapter<MarsPhoto,
+class PhotoGridAdapter(private val clickListener: MarsPhotoListener) : ListAdapter<MarsPhoto,
         PhotoGridAdapter.MarsPhotoViewHolder>(DiffCallback) {
 
             class MarsPhotoViewHolder(private var binding:GridViewItemBinding)
                 : RecyclerView.ViewHolder(binding.root){
 
-                    fun bind(marsPhoto: MarsPhoto){
+                    fun bind(clickListener: MarsPhotoListener,
+                             marsPhoto: MarsPhoto){
                         binding.photo = marsPhoto
+                        binding.clickListener = clickListener
                         binding.executePendingBindings()
                     }
             }
@@ -44,4 +46,8 @@ class PhotoGridAdapter : ListAdapter<MarsPhoto,
         }
     }
 
+}
+
+class MarsPhotoListener(val clickListener: (marsPhoto: MarsPhoto) -> Unit) {
+    fun onClick(marsPhoto: MarsPhoto) = clickListener(marsPhoto)
 }

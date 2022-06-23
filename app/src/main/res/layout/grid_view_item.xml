@@ -7,6 +7,10 @@
         <variable
             name="photo"
             type="com.example.android.marsphotos.network.MarsPhoto" />
+
+        <variable
+            name="clickListener"
+            type="com.example.android.marsphotos.MarsPhotoListener" />
     </data>
 
     <LinearLayout
