@@ -6,30 +6,34 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.example.android.marsphotos.R
 import com.example.android.marsphotos.databinding.FragmentOverviewBinding
+import com.example.android.marsphotos.databinding.GridViewItemBinding
 
-/**
- * This fragment shows the the status of the Mars photos web services transaction.
- */
 class OverviewFragment : Fragment() {
 
     private val viewModel: OverviewViewModel by viewModels()
 
-    /**
-     * Inflates the layout with Data Binding, sets its lifecycle owner to the OverviewFragment
-     * to enable Data Binding to observe LiveData, and sets up the RecyclerView with an adapter.
-     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val binding = FragmentOverviewBinding.inflate(inflater)
 
-        // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
-        binding.lifecycleOwner = this
+        viewModel.getMarsPhotos()
 
-        // Giving the binding access to the OverviewViewModel
+        binding.lifecycleOwner = this
         binding.viewModel = viewModel
+        binding.photosGrid.adapter = PhotoGridAdapter{
+                marsPhoto->
+            viewModel.onPhotoClicked(marsPhoto)
+
+            val action = OverviewFragmentDirections.actionOverviewFragment2ToDetailFragment()
+            findNavController()
+                .navigate(action)
+
+        }
 
         return binding.root
     }

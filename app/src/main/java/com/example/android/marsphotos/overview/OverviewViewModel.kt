@@ -5,25 +5,37 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.android.marsphotos.network.MarsApi
+import com.example.android.marsphotos.network.MarsPhoto
 import kotlinx.coroutines.launch
+
+enum class MarsApiStatus { LOADING, ERROR, DONE }
 
 class OverviewViewModel : ViewModel() {
 
-    private val _status = MutableLiveData<String>()
-    val status: LiveData<String> = _status
+    private var _status = MutableLiveData<MarsApiStatus>()
+    val status: LiveData<MarsApiStatus> = _status
 
-    init {
-        getMarsPhotos()
-    }
+    private var _photo = MutableLiveData<MarsPhoto>()
+    val photo: LiveData<MarsPhoto> = _photo
 
-    private fun getMarsPhotos() {
+    private var _photos = MutableLiveData<List<MarsPhoto>>()
+    val photos: LiveData<List<MarsPhoto>> = _photos
+
+
+    fun getMarsPhotos() {
+        _status.value = MarsApiStatus.LOADING
         viewModelScope.launch {
             try {
-                val listResult = MarsApi.retrofitService.getPhotos()
-                _status.value = "Success: ${listResult.size} Mars photos retrieved"
+                _photos.value = MarsApi.retrofitService.getPhotos()
+                _status.value = MarsApiStatus.DONE
             } catch (e: Exception) {
-                _status.value = "Failure: ${e.message}"
+                _status.value = MarsApiStatus.ERROR
+                _photos.value = listOf()
             }
         }
+    }
+
+    fun onPhotoClicked(marsPhoto: MarsPhoto) {
+        _photo.value = marsPhoto
     }
 }
