@@ -31,7 +31,7 @@ class PhotoGridAdapter(private val clickListener: MarsPhotoListener) : ListAdapt
 
     override fun onBindViewHolder(holder: MarsPhotoViewHolder, position: Int) {
         val marsPhoto = getItem(position)
-        holder.bind(marsPhoto)
+        holder.bind(clickListener, marsPhoto)
     }
 
     companion object DiffCallback : DiffUtil.ItemCallback<MarsPhoto>() {

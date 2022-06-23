@@ -2,15 +2,13 @@ package com.example.android.marsphotos
 
 import android.view.View
 import android.widget.ImageView
-import androidx.constraintlayout.widget.ConstraintSet.GONE
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.android.marsphotos.network.MarsPhoto
 import com.example.android.marsphotos.overview.MarsApiStatus
-import javax.swing.text.View
-import javax.swing.text.html.ImageView
+
 
 @BindingAdapter("imageUrl")
 fun bindImage(imgView: ImageView, imgUrl: String?) {

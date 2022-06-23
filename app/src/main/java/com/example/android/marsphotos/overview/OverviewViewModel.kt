@@ -18,6 +18,9 @@ class OverviewViewModel : ViewModel() {
     private val _photos = MutableLiveData<List<MarsPhoto>>()
     val photos: LiveData<List<MarsPhoto>> = _photos
 
+    private val _photo = MutableLiveData<MarsPhoto>()
+    val photo: LiveData<MarsPhoto> = _photo
+
     init {
         getMarsPhotos()
     }
@@ -36,4 +39,10 @@ class OverviewViewModel : ViewModel() {
             }
         }
     }
+
+    fun onPhotoClicked(marsPhoto: MarsPhoto) {
+        _photo.value = marsPhoto
+    }
 }
+
+

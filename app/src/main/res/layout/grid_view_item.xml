@@ -22,7 +22,7 @@
         <ImageView
 
             android:id="@+id/mars_image"
-
+            android:onClick="@{() -> clickListener.onClick(photo)}"
             android:layout_width="wrap_content"
             android:layout_height="170dp"
             android:adjustViewBounds="true"
