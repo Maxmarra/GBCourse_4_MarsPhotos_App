@@ -6,13 +6,13 @@
     <data>
         <variable
             name="photo"
-            type="com.example.android.marsphotos.network.MarsPhoto" />
+            type="com.example.android.marsphotos.domain.MarsPhotoDomain" />
 
 
     </data>
 
     <ImageView
-        app:imageUrl="@{photo.imgSrcUrl}"
+        app:imageUrl="@{photo.imgSrc}"
         android:id="@+id/mars_image"
         android:layout_width="wrap_content"
         android:layout_height="170dp"

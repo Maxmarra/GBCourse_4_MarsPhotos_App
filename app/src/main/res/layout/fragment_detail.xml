@@ -20,7 +20,7 @@
             android:layout_height="204dp"
             android:layout_marginTop="32dp"
             android:scaleType="centerInside"
-            app:imageUrl="@{viewModel.photo.imgSrcUrl}"/>
+            app:imageUrl="@{viewModel.photo.imgSrc}"/>
 
         <TextView
             android:id="@+id/textView"

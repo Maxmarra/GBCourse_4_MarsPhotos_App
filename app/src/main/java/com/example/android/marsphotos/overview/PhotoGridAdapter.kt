@@ -6,16 +6,17 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.marsphotos.databinding.GridViewItemBinding
-import com.example.android.marsphotos.network.MarsPhoto
+import com.example.android.marsphotos.domain.MarsPhotoDomain
 
-class PhotoGridAdapter (val onItemClicked:(marsPhoto: MarsPhoto)-> Unit) :
-    ListAdapter<MarsPhoto, PhotoGridAdapter.MarsPhotoViewHolder>(DiffCallback) {
+
+class PhotoGridAdapter (val onItemClicked:(marsPhoto: MarsPhotoDomain)-> Unit) :
+    ListAdapter<MarsPhotoDomain, PhotoGridAdapter.MarsPhotoViewHolder>(DiffCallback) {
 
     class MarsPhotoViewHolder(
         var binding: GridViewItemBinding
     ): RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(marsPhoto: MarsPhoto) {
+        fun bind(marsPhoto: MarsPhotoDomain) {
             binding.photo = marsPhoto
             binding.executePendingBindings()
         }
@@ -38,13 +39,13 @@ class PhotoGridAdapter (val onItemClicked:(marsPhoto: MarsPhoto)-> Unit) :
 
     }
 
-    companion object DiffCallback : DiffUtil.ItemCallback<MarsPhoto>() {
-        override fun areItemsTheSame(oldItem: MarsPhoto, newItem: MarsPhoto): Boolean {
+    companion object DiffCallback : DiffUtil.ItemCallback<MarsPhotoDomain>() {
+        override fun areItemsTheSame(oldItem: MarsPhotoDomain, newItem: MarsPhotoDomain): Boolean {
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: MarsPhoto, newItem: MarsPhoto): Boolean {
-            return oldItem.imgSrcUrl == newItem.imgSrcUrl
+        override fun areContentsTheSame(oldItem: MarsPhotoDomain, newItem: MarsPhotoDomain): Boolean {
+            return oldItem.imgSrc == newItem.imgSrc
         }
     }
 }
