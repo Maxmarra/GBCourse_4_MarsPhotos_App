@@ -1,6 +1,7 @@
 package com.example.android.marsphotos
 
 import android.util.Log
+import android.view.View
 import android.widget.ImageView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.android.marsphotos.network.IMG_URL
 import com.example.android.marsphotos.network.MovieDetail
+import com.example.android.marsphotos.overview.MovieApiStatus
 
 @BindingAdapter("imageUrl")
 fun bindImage(imgView: ImageView, imgUrl: String?) {
@@ -28,3 +30,46 @@ fun bindRecyclerView(recyclerView: RecyclerView,
     val adapter = recyclerView.adapter as MovieGridAdapter
     adapter.submitList(data)
 }
+
+@BindingAdapter("movieApiStatus")
+fun bindStatus(statusImageView: ImageView,
+               status: MovieApiStatus?) {
+
+    when (status) {
+        MovieApiStatus.LOADING -> {
+            statusImageView.visibility = View.VISIBLE
+            statusImageView.setImageResource(R.drawable.loading_animation)
+        }
+        MovieApiStatus.ERROR -> {
+            statusImageView.visibility = View.VISIBLE
+            statusImageView.setImageResource(R.drawable.ic_connection_error)
+        }
+        MovieApiStatus.DONE -> {
+            statusImageView.visibility = View.GONE
+        }else -> { }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
