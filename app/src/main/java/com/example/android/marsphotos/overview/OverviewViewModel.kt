@@ -8,9 +8,6 @@ import com.example.android.marsphotos.network.MarsApi
 import com.example.android.marsphotos.network.MarsPhoto
 import kotlinx.coroutines.launch
 
-//Извлечение и работа с ОДНИМ ОБЪЕКТОМ
-//Вывод одной фотки
-
 class OverviewViewModel : ViewModel() {
 
     private val _status = MutableLiveData<String>()

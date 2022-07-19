@@ -17,11 +17,7 @@ fun bindImage(imgView: ImageView, imgUrl: String?) {
             error(R.drawable.ic_broken_image)
         }
     }
-
-
 }
-
-
 @BindingAdapter("listData")
 fun bindRecyclerView(recyclerView: RecyclerView, data: List<MarsPhoto>?) {
     val adapter = recyclerView.adapter as PhotoGridAdapter
