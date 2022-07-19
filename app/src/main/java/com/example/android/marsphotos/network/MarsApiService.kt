@@ -9,7 +9,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 private const val BASE_URL = "https://api.themoviedb.org/3/"
-private const val IMG_URL = "https://image.tmdb.org/t/p/w500/"
+const val IMG_URL = "https://image.tmdb.org/t/p/w500"
 const val API_KEY = "6f9ab437c43ec1fa9fb2dd9119d38c68"
 
 private val moshi = Moshi.Builder()
