@@ -5,12 +5,12 @@
 
     <data>
         <variable
-            name="viewModel"
-            type="com.example.android.marsphotos.overview.OverviewViewModel" />
+            name="movie"
+            type="com.example.android.marsphotos.network.MovieDetail" />
     </data>
 
     <ImageView
-        app:imageUrl="@{viewModel.movies.posterPath}"
+        app:imageUrl="@{movie.posterPath}"
         android:id="@+id/mars_image"
         android:layout_width="wrap_content"
         android:layout_height="170dp"

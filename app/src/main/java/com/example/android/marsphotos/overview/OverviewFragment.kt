@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.example.android.marsphotos.MovieGridAdapter
 import com.example.android.marsphotos.databinding.FragmentOverviewBinding
 import com.example.android.marsphotos.databinding.GridViewItemBinding
 
@@ -32,6 +33,7 @@ class OverviewFragment : Fragment() {
 
         // Giving the binding access to the OverviewViewModel
         binding.viewModel = viewModel
+        binding.moviesGrid.adapter = MovieGridAdapter()
 
         return binding.root
     }

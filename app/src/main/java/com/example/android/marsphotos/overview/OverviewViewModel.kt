@@ -15,18 +15,18 @@ class OverviewViewModel : ViewModel() {
     private val _status = MutableLiveData<String>()
     val status: LiveData<String> = _status
 
-    private val _movies = MutableLiveData<MovieDetail>()
-    val movies: LiveData<MovieDetail> = _movies
+    private val _movies = MutableLiveData<List<MovieDetail>>()
+    val movies: LiveData<List<MovieDetail>> = _movies
 
     init {
-        getMarsPhotos()
+        getMovies()
     }
 
-    private fun getMarsPhotos() {
+    private fun getMovies() {
         viewModelScope.launch {
             try {
-                _movies.value = MarsApi.retrofitService.getPopularMovies(apiKey = API_KEY).popularMovies[2]
-                _status.value = "   First Mars image URL : ${_movies.value!!.posterPath}"
+                _movies.value = MarsApi.retrofitService.getPopularMovies(apiKey = API_KEY).popularMovies
+                _status.value = "Success: Movies retrieved"
             } catch (e: Exception) {
                 _status.value = "Failure: ${e.message}"
             }
