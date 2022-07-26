@@ -6,12 +6,11 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.marsphotos.databinding.GridViewItemBinding
 import com.example.android.marsphotos.network.Movie
-import com.example.android.marsphotos.network.MovieDetail
 
-class MovieGridAdapter : ListAdapter<MovieDetail,MovieGridAdapter.MovieViewHolder>(DiffCallback) {
+class MovieGridAdapter : ListAdapter<Movie,MovieGridAdapter.MovieViewHolder>(DiffCallback) {
 
     class MovieViewHolder(private val binding: GridViewItemBinding):RecyclerView.ViewHolder(binding.root){
-        fun bind(movie: MovieDetail) {
+        fun bind(movie: Movie) {
             binding.movie = movie
             binding.executePendingBindings()
         }
@@ -26,12 +25,12 @@ class MovieGridAdapter : ListAdapter<MovieDetail,MovieGridAdapter.MovieViewHolde
         holder.bind(movie)
     }
 
-    companion object DiffCallback : DiffUtil.ItemCallback<MovieDetail>() {
-        override fun areItemsTheSame(oldItem: MovieDetail, newItem: MovieDetail): Boolean {
+    companion object DiffCallback : DiffUtil.ItemCallback<Movie>() {
+        override fun areItemsTheSame(oldItem: Movie, newItem: Movie): Boolean {
             return oldItem.title == newItem.title
         }
 
-        override fun areContentsTheSame(oldItem: MovieDetail, newItem: MovieDetail): Boolean {
+        override fun areContentsTheSame(oldItem: Movie, newItem: Movie): Boolean {
             return oldItem.posterPath == newItem.posterPath
         }
     }

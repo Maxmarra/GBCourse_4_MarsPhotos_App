@@ -6,8 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.android.marsphotos.network.API_KEY
 import com.example.android.marsphotos.network.MarsApi
-import com.example.android.marsphotos.network.MarsApiService
-import com.example.android.marsphotos.network.MovieDetail
+import com.example.android.marsphotos.network.Movie
 import kotlinx.coroutines.launch
 
 enum class MovieApiStatus { LOADING, ERROR, DONE }
@@ -17,8 +16,8 @@ class OverviewViewModel : ViewModel() {
     private val _status = MutableLiveData<MovieApiStatus>()
     val status: LiveData<MovieApiStatus> = _status
 
-    private val _movies = MutableLiveData<List<MovieDetail>>()
-    val movies: LiveData<List<MovieDetail>> = _movies
+    private val _movies = MutableLiveData<List<Movie>>()
+    val movies: LiveData<List<Movie>> = _movies
 
     init {
         getMovies()
