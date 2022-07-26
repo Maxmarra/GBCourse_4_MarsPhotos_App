@@ -11,14 +11,6 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/json_photos_1/MarsPhotos.json_photos_1.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/json_photos_1/MarsPhotos.json_photos_1.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/json_photos_1/MarsPhotos.json_photos_1.main.iml" filepath="$PROJECT_DIR$/.idea/modules/json_photos_1/MarsPhotos.json_photos_1.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/json_photos_1/MarsPhotos.json_photos_1.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/json_photos_1/MarsPhotos.json_photos_1.unitTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mars_1_drilling/MarsPhotos.mars_1_drilling.iml" filepath="$PROJECT_DIR$/.idea/modules/mars_1_drilling/MarsPhotos.mars_1_drilling.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mars_1_drilling/MarsPhotos.mars_1_drilling.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/mars_1_drilling/MarsPhotos.mars_1_drilling.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mars_1_drilling/MarsPhotos.mars_1_drilling.main.iml" filepath="$PROJECT_DIR$/.idea/modules/mars_1_drilling/MarsPhotos.mars_1_drilling.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mars_1_drilling/MarsPhotos.mars_1_drilling.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/mars_1_drilling/MarsPhotos.mars_1_drilling.unitTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mars_3_drilling/MarsPhotos.mars_3_drilling.iml" filepath="$PROJECT_DIR$/.idea/modules/mars_3_drilling/MarsPhotos.mars_3_drilling.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mars_3_drilling/MarsPhotos.mars_3_drilling.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/mars_3_drilling/MarsPhotos.mars_3_drilling.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mars_3_drilling/MarsPhotos.mars_3_drilling.main.iml" filepath="$PROJECT_DIR$/.idea/modules/mars_3_drilling/MarsPhotos.mars_3_drilling.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mars_3_drilling/MarsPhotos.mars_3_drilling.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/mars_3_drilling/MarsPhotos.mars_3_drilling.unitTest.iml" />
     </modules>
   </component>
 </project>
