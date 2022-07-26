@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.example.android.marsphotos.model.ModelMovie
 
-@Entity
+@Entity(tableName = "movie_database")
 data class DatabaseMovie (
 
     @PrimaryKey
