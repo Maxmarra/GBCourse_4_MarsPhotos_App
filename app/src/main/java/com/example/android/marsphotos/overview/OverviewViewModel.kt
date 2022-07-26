@@ -29,7 +29,7 @@ class OverviewViewModel : ViewModel() {
         _status.value = MovieApiStatus.LOADING
         viewModelScope.launch {
             try {
-                val movieList = MarsApi.retrofitService.getPopularMovies(apiKey = API_KEY)
+
                 //грузим напрямую из интернета
                 _movies.postValue(movieList.asDomainModel())
                 _status.value = MovieApiStatus.DONE
