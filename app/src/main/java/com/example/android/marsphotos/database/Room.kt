@@ -15,7 +15,7 @@ interface MovieDao {
 
 
 
-@Database(entities = [DatabaseMovie::class], version = 1)
+@Database(entities = [DatabaseMovie::class], version = 1, exportSchema = false)
 abstract class MovieDatabase: RoomDatabase() {
 
     abstract val movieDao: MovieDao
