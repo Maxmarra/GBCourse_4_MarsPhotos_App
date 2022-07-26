@@ -1,18 +1,46 @@
 package com.example.android.marsphotos.network
 
+import com.example.android.marsphotos.database.DatabaseMovie
+import com.example.android.marsphotos.model.ModelMovie
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
-data class AllMovies(
+@JsonClass(generateAdapter = true)
+data class Results(
     @Json(name = "results")
-    val popularMovies: List<Movie>
-
+    val popularMovies: List<NetworkMovie>
 )
-data class Movie(
+@JsonClass(generateAdapter = true)
+data class NetworkMovie(
+    val id: Int,
     val title: String,
     @Json(name = "poster_path")
     val posterPath: String
 
 )
+
+fun Results.asDomainModel(): List<ModelMovie>{
+    return popularMovies.map {
+        ModelMovie(
+            id = it.id,
+            title = it.title,
+            posterPath = it.posterPath
+        )
+    }
+}
+
+fun Results.asDatabaseModel(): List<DatabaseMovie>{
+    return popularMovies.map {
+        DatabaseMovie(
+            id = it.id,
+            title = it.title,
+            posterPath = it.posterPath
+        )
+    }
+}
+
+
+
 
 /*
 * {

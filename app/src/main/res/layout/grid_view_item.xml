@@ -6,7 +6,7 @@
     <data>
         <variable
             name="movie"
-            type="com.example.android.marsphotos.network.Movie" />
+            type="com.example.android.marsphotos.model.ModelMovie" />
     </data>
 
     <ImageView

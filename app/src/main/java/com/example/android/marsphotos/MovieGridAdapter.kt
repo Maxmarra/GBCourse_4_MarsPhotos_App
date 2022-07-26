@@ -5,12 +5,13 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.marsphotos.databinding.GridViewItemBinding
-import com.example.android.marsphotos.network.Movie
+import com.example.android.marsphotos.model.ModelMovie
+import com.example.android.marsphotos.network.NetworkMovie
 
-class MovieGridAdapter : ListAdapter<Movie,MovieGridAdapter.MovieViewHolder>(DiffCallback) {
+class MovieGridAdapter : ListAdapter<ModelMovie,MovieGridAdapter.MovieViewHolder>(DiffCallback) {
 
     class MovieViewHolder(private val binding: GridViewItemBinding):RecyclerView.ViewHolder(binding.root){
-        fun bind(movie: Movie) {
+        fun bind(movie: ModelMovie) {
             binding.movie = movie
             binding.executePendingBindings()
         }
@@ -25,12 +26,12 @@ class MovieGridAdapter : ListAdapter<Movie,MovieGridAdapter.MovieViewHolder>(Dif
         holder.bind(movie)
     }
 
-    companion object DiffCallback : DiffUtil.ItemCallback<Movie>() {
-        override fun areItemsTheSame(oldItem: Movie, newItem: Movie): Boolean {
+    companion object DiffCallback : DiffUtil.ItemCallback<ModelMovie>() {
+        override fun areItemsTheSame(oldItem: ModelMovie, newItem: ModelMovie): Boolean {
             return oldItem.title == newItem.title
         }
 
-        override fun areContentsTheSame(oldItem: Movie, newItem: Movie): Boolean {
+        override fun areContentsTheSame(oldItem: ModelMovie, newItem: ModelMovie): Boolean {
             return oldItem.posterPath == newItem.posterPath
         }
     }

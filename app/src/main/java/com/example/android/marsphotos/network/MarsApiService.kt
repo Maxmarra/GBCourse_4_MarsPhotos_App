@@ -24,7 +24,7 @@ interface MarsApiService {
     @GET("movie/popular")
     suspend fun getPopularMovies(
         @Query("api_key") apiKey: String,
-    ): AllMovies
+    ): Results
 }
 
 object MarsApi {

@@ -7,8 +7,9 @@ import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.example.android.marsphotos.model.ModelMovie
 import com.example.android.marsphotos.network.IMG_URL
-import com.example.android.marsphotos.network.Movie
+import com.example.android.marsphotos.network.NetworkMovie
 import com.example.android.marsphotos.overview.MovieApiStatus
 
 @BindingAdapter("imageUrl")
@@ -26,7 +27,7 @@ fun bindImage(imgView: ImageView, imgUrl: String?) {
 
 @BindingAdapter("listData")
 fun bindRecyclerView(recyclerView: RecyclerView,
-                     data: List<Movie>?) {
+                     data: List<ModelMovie>?) {
     val adapter = recyclerView.adapter as MovieGridAdapter
     adapter.submitList(data)
 }
