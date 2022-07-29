@@ -2,6 +2,7 @@ package com.example.android.marsphotos.network
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import dagger.Provides
 import kotlinx.coroutines.delay
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -23,12 +24,13 @@ private val retrofit = Retrofit.Builder()
     .baseUrl(BASE_URL)
     .build()
 
+
 interface WeatherApiService {
 
     @GET("forecast")
     suspend fun getWeatherData(
-        @Query("lat") lat: Double = 45.02,
-        @Query("lon") lon: Double = 36.08,
+        @Query("lat") lat: Double,
+        @Query("lon") lon: Double,
         @Query("appid") appId: String = APP_KEY,
         @Query("units") units: String = "metric",
         @Query("lang") lang: String = "ru",
