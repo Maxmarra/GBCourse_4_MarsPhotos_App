@@ -5,8 +5,8 @@
 
     <data>
         <variable
-            name="photo"
-            type="com.example.android.marsphotos.network.MarsPhoto" />
+            name="weather"
+            type="com.example.android.marsphotos.domain.WeatherUnited" />
     </data>
 
     <LinearLayout
@@ -15,24 +15,24 @@
         android:orientation="vertical"
         android:textAlignment="center">
 
-        <ImageView
+<!--        <ImageView-->
 
-            android:id="@+id/mars_image"
+<!--            android:id="@+id/mars_image"-->
 
-            android:layout_width="wrap_content"
-            android:layout_height="170dp"
-            android:adjustViewBounds="true"
-            android:padding="2dp"
-            android:scaleType="fitXY"
-            app:imageUrl="@{photo.imgSrcUrl}"
-            tools:src="@tools:sample/backgrounds/scenic" />
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="170dp"-->
+<!--            android:adjustViewBounds="true"-->
+<!--            android:padding="2dp"-->
+<!--            android:scaleType="fitXY"-->
+<!--            app:imageUrl="@{photo.imgSrcUrl}"-->
+<!--            tools:src="@tools:sample/backgrounds/scenic" />-->
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="@{photo.id}"
+            android:text="@{@string/temp(weather.temperature)}"
             android:textAlignment="center" />
     </LinearLayout>
 </layout>

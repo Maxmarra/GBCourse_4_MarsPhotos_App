@@ -7,16 +7,16 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.marsphotos.databinding.GridViewItemBinding
-import com.example.android.marsphotos.network.MarsPhoto
+import com.example.android.marsphotos.domain.WeatherUnited
 
-class PhotoGridAdapter : ListAdapter<MarsPhoto,
+class PhotoGridAdapter : ListAdapter<WeatherUnited,
         PhotoGridAdapter.MarsPhotoViewHolder>(DiffCallback) {
 
             class MarsPhotoViewHolder(private var binding:GridViewItemBinding)
                 : RecyclerView.ViewHolder(binding.root){
 
-                    fun bind(marsPhoto: MarsPhoto){
-                        binding.photo = marsPhoto
+                    fun bind(marsPhoto: WeatherUnited){
+                        binding.weather = marsPhoto
                         binding.executePendingBindings()
                     }
             }
@@ -32,15 +32,15 @@ class PhotoGridAdapter : ListAdapter<MarsPhoto,
         holder.bind(marsPhoto)
     }
 
-    companion object DiffCallback : DiffUtil.ItemCallback<MarsPhoto>() {
+    companion object DiffCallback : DiffUtil.ItemCallback<WeatherUnited>() {
         override fun areItemsTheSame(
-            oldItem: MarsPhoto, newItem: MarsPhoto): Boolean {
-            return oldItem.id == newItem.id
+            oldItem: WeatherUnited, newItem: WeatherUnited): Boolean {
+            return oldItem.temperature == newItem.temperature
         }
 
         override fun areContentsTheSame(
-            oldItem: MarsPhoto, newItem: MarsPhoto): Boolean {
-            return oldItem.imgSrcUrl == newItem.imgSrcUrl
+            oldItem: WeatherUnited, newItem: WeatherUnited): Boolean {
+            return oldItem.speed == newItem.speed
         }
     }
 
