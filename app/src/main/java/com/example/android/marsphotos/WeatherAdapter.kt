@@ -8,28 +8,29 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.marsphotos.databinding.GridViewItemBinding
 import com.example.android.marsphotos.domain.WeatherUnited
+import com.example.android.marsphotos.network.DataList
 
-class PhotoGridAdapter : ListAdapter<WeatherUnited,
-        PhotoGridAdapter.MarsPhotoViewHolder>(DiffCallback) {
+class WeatherAdapter : ListAdapter<WeatherUnited,
+        WeatherAdapter.WeatherViewHolder>(DiffCallback) {
 
-            class MarsPhotoViewHolder(private var binding:GridViewItemBinding)
+            class WeatherViewHolder(private var binding:GridViewItemBinding)
                 : RecyclerView.ViewHolder(binding.root){
 
-                    fun bind(marsPhoto: WeatherUnited){
-                        binding.weather = marsPhoto
+                    fun bind(weatherUnited: WeatherUnited){
+                        binding.weatherUnited = weatherUnited
                         binding.executePendingBindings()
                     }
             }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):
-            MarsPhotoViewHolder {
-        return MarsPhotoViewHolder(GridViewItemBinding.inflate(LayoutInflater.from(parent.context))
+            WeatherViewHolder {
+        return WeatherViewHolder(GridViewItemBinding.inflate(LayoutInflater.from(parent.context))
         )
     }
 
-    override fun onBindViewHolder(holder: MarsPhotoViewHolder, position: Int) {
-        val marsPhoto = getItem(position)
-        holder.bind(marsPhoto)
+    override fun onBindViewHolder(holder: WeatherViewHolder, position: Int) {
+        val weather = getItem(position)
+        holder.bind(weather)
     }
 
     companion object DiffCallback : DiffUtil.ItemCallback<WeatherUnited>() {
@@ -40,7 +41,7 @@ class PhotoGridAdapter : ListAdapter<WeatherUnited,
 
         override fun areContentsTheSame(
             oldItem: WeatherUnited, newItem: WeatherUnited): Boolean {
-            return oldItem.speed == newItem.speed
+            return oldItem.temperature == oldItem.temperature
         }
     }
 

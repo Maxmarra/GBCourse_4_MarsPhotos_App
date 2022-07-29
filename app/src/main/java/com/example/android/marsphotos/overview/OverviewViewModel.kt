@@ -7,11 +7,13 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.android.marsphotos.domain.WeatherUnited
 import com.example.android.marsphotos.network.APP_KEY
+import com.example.android.marsphotos.network.DataList
 import com.example.android.marsphotos.network.WeatherApiObject
 import com.example.android.marsphotos.network.asDomainModel
 import kotlinx.coroutines.launch
 
 enum class WeatherApiStatus { LOADING, ERROR, DONE }
+
 
 class OverviewViewModel : ViewModel() {
 
@@ -29,12 +31,15 @@ class OverviewViewModel : ViewModel() {
         _status.value = WeatherApiStatus.LOADING
         viewModelScope.launch {
             try {
-                _weathers.value = WeatherApiObject.retrofitService.getWeatherData(45.025,37.25, APP_KEY).asDomainModel()
-                Log.d("Winther", "FUUUUUUUUUUUUUUCK - ${_weathers.value}")
+                _weathers.value =
+                    WeatherApiObject.retrofitService.getWeatherData().asDomainModel()
+
+                Log.d("POBEDA", "${_weathers.value!!.size}")
                 _status.value = WeatherApiStatus.DONE
 
             } catch (e: Exception) {
                 _status.value = WeatherApiStatus.ERROR
+                Log.e("HUI", "${e.message}")
                 _weathers.value = listOf()
             }
         }

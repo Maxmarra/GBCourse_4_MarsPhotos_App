@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.example.android.marsphotos.PhotoGridAdapter
+import com.example.android.marsphotos.WeatherAdapter
 import com.example.android.marsphotos.databinding.FragmentOverviewBinding
-import com.example.android.marsphotos.databinding.GridViewItemBinding
+
 class OverviewFragment : Fragment() {
 
     private val viewModel: OverviewViewModel by viewModels()
@@ -20,7 +20,7 @@ class OverviewFragment : Fragment() {
 
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
-        binding.photosGrid.adapter = PhotoGridAdapter()
+        binding.photosGrid.adapter = WeatherAdapter()
 
         return binding.root
     }

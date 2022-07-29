@@ -2,4 +2,5 @@
 <resources>
     <string name="app_name">Mars Photos</string>
     <string name="temp">%s</string>
+    <string name="weather_description">%s</string>
 </resources>

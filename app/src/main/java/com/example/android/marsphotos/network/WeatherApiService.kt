@@ -24,13 +24,14 @@ private val retrofit = Retrofit.Builder()
     .build()
 
 interface WeatherApiService {
-    @GET("forecast/")
+
+    @GET("forecast")
     suspend fun getWeatherData(
-        @Query("lat") lat: Double,
-        @Query("lon") long: Double,
-        @Query("appid") appId: String,
-//        @Query("units") units: String = "metric",
-//        @Query("lang") lang: String = "ru",
+        @Query("lat") lat: Double = 45.02,
+        @Query("lon") lon: Double = 36.08,
+        @Query("appid") appId: String = APP_KEY,
+        @Query("units") units: String = "metric",
+        @Query("lang") lang: String = "ru",
     ): Container
 
 }
